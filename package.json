@@ -1,0 +1,19 @@
+{
+  "name": "recipe-finder-api",
+  "version": "1.0.0",
+  "description": "Recipe Finder Website using the spoonacular api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeNae15232/recipe-finder-api.git"
+  },
+  "author": "Jenae Studer-Hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naeNae15232/recipe-finder-api/issues"
+  },
+  "homepage": "https://github.com/naeNae15232/recipe-finder-api#readme"
+}
