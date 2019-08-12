@@ -1,0 +1,31 @@
+/* Font Styles
+font-family: 'BenchNine', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Questrial', sans-serif; */
+
+
+#searchBar{
+    border: solid 3px black;
+    width: 50%;
+    margin-bottom: 1rem;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 20px;
+    
+}
+input:focus{
+    border: 2px solid pink;
+}
+.searchInput{
+    font-family: 'BenchNine', sans-serif;
+    font-size: 20px;
+
+}
+
+.card{
+    background-color: blue;
+    color: white;
+    margin-bottom: 1rem;
+    padding: 5%;
+    height: 30%;
+    width: 50%;
+}

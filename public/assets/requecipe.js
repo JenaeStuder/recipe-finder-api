@@ -1,33 +1,33 @@
 require('dotenv').config();
 var fetch = require('node-fetch');
 const keys = require('./keys.js'); 
-const card = document.getElementById('recipe');
+// const card = document.getElementById('recipe');
 const apiKey = new spoonacular(keys.spoonacular);
 const requecipe = new Requecipe();
 
 
 function Requecipe() {
-    const url = 'https://api.spoonacular.com/recipes/search';
+    const url = 'https://api.spoonacular.com/recipes/search?';
     parameters = {
-        query: '<string>',
-        title: '<string>',
+        query: 'pizza',
+        title: '',
         count: 12,
-        readyInMinutes: '<number>',
-        image: '<binary>',
-        apiKey: '?api_key=' + apiKey
+        readyInMinutes: '',
+        image: '',
+        apiKey: 'apiKey=' + apiKey
     };
     this.createQueryString();
     this.formatServingTime();
     this.searchRecipes();
      
-   const query = requecipe.createQueryString = function (parameters) {
+   const queryAString = requecipe.createQueryString = function (parameters) {
         let queryString = Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
        return queryString;
     }
     // console.log(query);
 
     const formattedTime = requecipe.formatServingTime = function (time) {
-        let totalMinutes = results.readyInMinutes;
+        let totalMinutes = parameters.readyInMinutes;
         let hours = Math.floor(totalMinutes / 60);
         let minutes = totalMinutes % 60;
         hours = hours < 10 ? '0' + hours : hours;
@@ -37,13 +37,15 @@ function Requecipe() {
     }
     console.log(formattedTime)
 
-   const search = requecipe.searchRecipes = function(parameters){
-       const buildUrl = url + query;
-        // fetch(buildUrl)
-        // .then (results => results.json())
-        // .then(data => console.log(JSON.stringify(data)))
+   requecipe.searchRecipes = function(parameters){
+       const buildUrl = url + '&' + queryAString;
+        fetch(buildUrl)
+        .then (results => results.json())
+        .then(data => console.log(JSON.stringify(data)))
         console.log(buildUrl)
     }
+    
+}
     
 //         .then(function (data) {
 //             let recipes = data.results;
@@ -96,6 +98,3 @@ function Requecipe() {
 
 
 
-// function search(){
-
-// }
