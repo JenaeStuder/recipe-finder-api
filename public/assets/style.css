@@ -3,9 +3,20 @@ font-family: 'BenchNine', sans-serif;
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Questrial', sans-serif; */
 
-
+*{
+    box-sizing: border-box;
+}
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    color: #666;
+    background: #F6F6F6;
+  }
+ 
 #searchBar{
-    border: solid 3px black;
+    border: solid 2px #666;
     width: 50%;
     margin-bottom: 1rem;
     font-family: 'BenchNine', sans-serif;
@@ -20,12 +31,77 @@ input:focus{
     font-size: 20px;
 
 }
-
-.card{
-    background-color: blue;
-    color: white;
-    margin-bottom: 1rem;
-    padding: 5%;
-    height: 30%;
-    width: 50%;
+button{
+    border: 2px solid pink;
+    height: 100px;
+    width: 150px;
 }
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start; */
+}
+.cardContainer{
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start; */
+}
+.card{
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    /* overflow: hidden; */
+    transition: all .2s linear;
+     height: 400px;
+     width: 30px;
+    /*width: 275px; */
+    /* align-self: center; */
+}
+.image{
+    /* height: 20em;
+    width: 10em; */
+    margin: 1em;
+    border-radius: 12px;
+}
+/* .card-image{
+    margin: 1em;
+} */
+/* .card-title{
+    font-size: 50px;
+} */
+.card:hover {
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+    transform: translate3D(0, -2px, 0);
+  }
+.card:nth-child(1n) {
+    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  }
+.card:nth-child(2n) {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  }
+  
+  .card:nth-child(3n) {
+    background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+  }
+  
+  .card:nth-child(4n) {
+    background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+  }
+  @media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .card {
+      flex: 1 1 calc(33% - 2rem);
+    }
+  }

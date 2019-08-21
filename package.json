@@ -2,7 +2,7 @@
   "name": "recipe-finder-api",
   "version": "1.0.0",
   "description": "Recipe Finder Website using the spoonacular api",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,13 +15,18 @@
   "bugs": {
     "url": "https://github.com/naeNae15232/recipe-finder-api/issues"
   },
-  "homepage": "https://github.com/naeNae15232/recipe-finder-api#readme",
+  "homepage": "https://github.com/naeNae15232/recipe-finder-api.git",
   "dependencies": {
+    "babel-install": "^2.1.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-async-await": "^1.1.0",
+    "fs": "0.0.1-security",
     "materialize-css": "^1.0.0-rc.2",
     "node-fetch": "^2.6.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

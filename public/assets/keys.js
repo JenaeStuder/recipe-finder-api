@@ -1,5 +1,5 @@
-console.log('This is loaded :)')
+// console.log('This is loaded :)')
 
-exports.spoonacular = {
-    id: process.env.ACCESS_KEY,
-};
+// exports.spoonacular = {
+//     id: process.env.ACCESS_KEY,
+// };

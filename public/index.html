@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Materialize CDN -->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Materialize CDN -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Google Font CDN -->
-    <link href="https://fonts.googleapis.com/css?family=BenchNine:300,400,700|Open+Sans+Condensed:300|Questrial&display=swap" rel="stylesheet">
+  <!-- Google Font CDN -->
+  <link
+    href="https://fonts.googleapis.com/css?family=BenchNine:300,400,700|Open+Sans+Condensed:300|Questrial&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="./assets/style.css"  />
-    <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  <title>Document</title>
+
+
 </head>
+
 <body>
 
-  <form id='search'>
+  <form method='POST' action='/api/api-routes' id='form'>
     <label class='searchInput' for='recipeInput'>Search For A Recipe</label>
-    <input type='text' id= 'searchBar'><br>
-    <input id='searchRecipe' type='submit' value='Submit'>
+    <input type='text' name='userInput' id='searchBar'><br>
+    <input type='submit' value='Submit'>
   </form>
-    <!-- Materialize Card -->
-        <div class="row">
-                <div class="col s12 m7">
-                  <div class="card" id='recipe'>
-                    <div class="card-image" id='image'>
-                      <img src="">
-                      <span class="card-title" id='title'></span>
-                    </div>
-                    <div class="card-content" id='body'>
-                      <p></p>
-                    </div>
-                    <!-- <div class="card-action">
-                      <a href="#">This is a link</a>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
 
-    <!-- Materialize JS CDN -->
-    <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom JS File -->
-        <script src="./assets/requecipe.js"></script>
+  <!-- Materialize Card -->
+  <!-- <div class='container'>
+        <div id='cardContainer'></div>
+  </div> -->
+  
+  <div class='flex-container container' id ='cardContainer'>
+    
+      <!-- <div id='cardContainer'> -->
+          <!-- <div class="card">
+              <div class="card-img waves-effect waves-block waves-light">
+                <img class="activator" src="./assets/images/631045-312x231.jpg">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div> -->
+    <!-- </div>  -->
+  <!-- </div> -->
+  </div>
+
+  <!-- Materialize JS CDN -->
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Custom JS File -->
+  <script src="./assets/requecipe.js"></script>
 </body>
+
 </html>
