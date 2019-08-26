@@ -1,18 +1,33 @@
 require('dotenv').config();
+const express= require('express')
 const fetch = require('node-fetch');
 const keys = process.env.ACCESS_KEY;
+var bodyParser = require('body-parser')
+
 
 module.exports = (app) => {
 
+
     let userInput;
+    let dietSelection;
 
-    app.post('/api/api-routes', function (req, res) {
-        userInput = req.body.userInput;
+    app.use(bodyParser.urlencoded({extended: true}));
+
+    app.get('/api/api-routes', function (req, res) {
+        userInput = req.query.userInput;
+        dietSelection = req.query.dietSelection;
+        
+        console.log('submit results: ' + dietSelection)
+        console.log('user input: ' + userInput)
         res.redirect('/')
-        console.log(userInput)
-    })
+        console.log( req.query.query)
+    
 
-    app.get('/api/api-routes/', function (req, res) {
+    // app.post('/api/api-routes', function(req, res){
+        
+     })
+
+     app.post('/api/api-routes', function (req, res) {
 
         function recipes() {
 
@@ -20,11 +35,13 @@ module.exports = (app) => {
 
             let parameters = {
                 query: userInput,
-                number: 12,
+                number: 6,
+                // diet: dietSelection,
                 apiKey: keys
             };
             const queryString = Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
             console.log(queryString)
+
             let buildUrl = url + queryString;
             console.log("build url = " + buildUrl);
             return fetch(buildUrl)
@@ -35,7 +52,8 @@ module.exports = (app) => {
                     res.redirect('/error')
                 })
         }
-          recipes()
-    })
+              recipes()
+            })
+    }
 
-}
+

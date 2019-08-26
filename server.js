@@ -8,6 +8,7 @@ const fetch = require('node-fetch');
 
 // used to render all static files
 app.use(express.static("public"));
+app.use(express.static("materialize-src"));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));

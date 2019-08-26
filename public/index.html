@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Materialize CDN -->
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-  <!-- Google Font CDN -->
-  <link
-    href="https://fonts.googleapis.com/css?family=BenchNine:300,400,700|Open+Sans+Condensed:300|Questrial&display=swap"
-    rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" type='text/css' rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-
-
 </head>
 
 <body>
+    <div class='flex-container' id='inputContainer'>
+      <div class="row">
+        <form method='GET' action='/api/api-routes' id='form'>
+          <div class="col 5s">
+            <div class="row">
+              <div class="input-field input ">
+                <label for="textarea1">Search</label>
+                <input id="icon_prefix" class="materialize-textarea" type='text' name='userInput' id='searchBar'>
+              </div>
+            </div>
+          </div>
+          <div class="col 5s">
+            <div class="input-field" id='select'>
+              <select id='selectField' name='dietSelection'>
+                <option value="" disabled selected>Diet Options</option>
+                <option value='Gluten Free'>Gluten Free</option>
+                <option value='Ketogenic'>Ketogenic</option>
+                <option value='Paleo'>Paleo</option>
+                <option value='Pescetarian'>Pescetarian</option>
+                <option value='Vegan'>Vegan</option>
+                <option value='Vegetarian'>Vegetarian</option>
+                <option value='Whole30'>Whole30</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <div class="col 2s">
+          <button type='submit' form='form' value='submit'>Submit</button>
+        </div>
+      </div>
+    </div>
+  <div class='flex-container' id='cardContainer'>
 
-  <form method='POST' action='/api/api-routes' id='form'>
-    <label class='searchInput' for='recipeInput'>Search For A Recipe</label>
-    <input type='text' name='userInput' id='searchBar'><br>
-    <input type='submit' value='Submit'>
-  </form>
+    <!-- <div class="card small">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="./assets/images/631045-312x231.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title</span>
+          <p><a href="#">This is a link</a></p>
+          <p>second thing on the screen</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div> -->
 
-  <!-- Materialize Card -->
-  <!-- <div class='container'>
-        <div id='cardContainer'></div>
-  </div> -->
-  
-  <div class='flex-container container' id ='cardContainer'>
-    
-      <!-- <div id='cardContainer'> -->
-          <!-- <div class="card">
-              <div class="card-img waves-effect waves-block waves-light">
-                <img class="activator" src="./assets/images/631045-312x231.jpg">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">This is a link</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div> -->
-    <!-- </div>  -->
-  <!-- </div> -->
   </div>
+ 
+ 
 
-  <!-- Materialize JS CDN -->
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Custom JS File -->
-  <script src="./assets/requecipe.js"></script>
+  <script src="./requecipe.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('select').material_select();
+    });
+  </script>
 </body>
 
 </html>
