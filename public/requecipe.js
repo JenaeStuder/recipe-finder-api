@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         // takes the results and puts them into variables for ease of use later on in the code.
 
                         let title = recipeResults[i].title;
-                        let image = 'https://spoonacular.com/recipeImages/' + recipeResults[i].id + '-240x150.jpg';
+                        let imageType = recipeResults[i].imageType
+                        let image = 'https://spoonacular.com/recipeImages/' + recipeResults[i].id + '-240x150.' + imageType;
                         let servings = recipeResults[i].servings;
                         let readyIn = recipeResults[i].readyInMinutes
-
-                        //a variable that contains a function to convert the total minutes into hours and minutes so we can display our data in an hour and minute format.
+                        let source = recipeResults[i].sourceUrl;
+                        //servingTime is variable that contains a function to convert the total minutes into hours and minutes so we can display our data in an hour and minute format.
 
                         let servingTime = function (totalMinutes, hours, minutes, newtime) {
                             totalMinutes = readyIn;
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             let cardRevealDiv = document.createElement('div')
                             cardRevealDiv.setAttribute('class', 'card-reveal')
-                            let cardReveal = '<div><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>' + title + '</span><p>Total Time: ' + servingTime + '</p><p> Servings: ' + servings + '</p></div>'
+                            let cardReveal = '<div><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>' + title + '</span><p>Recipe Information Can Be Found<a href="'+source+'" target="blank"> Here</a></p><p>Total Time: ' + servingTime + '</p><p> Servings: ' + servings + '</p></div>'
                             cardRevealDiv.innerHTML = cardReveal
 
                             //This appends the child which is my card variable to the parent cardContainer id on the html.

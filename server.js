@@ -7,13 +7,11 @@ require('dotenv').config();
 //The path variable requires and contains the Path node module which allows you to access all the executables available to npm scripts, without booting up all of the npm(1)
 const path = require('path');
 //The fs variable requires and contains the File System module. This allows you to work with the file system on your computer.
-const fs = require('fs');
+// const fs = require('fs');
 //The app variable will be used from now on to call all the express instances we need.
 const app = express ();
 //The PORT variable is created so the server can host the project locally, it's been assigned the 3000 port, if this is unavailable it'll choose another open port instead of sending an error.
 let PORT = process.env.PORT || 3000
-//The fetch variable requires the node-fetch module that is needed to create API calls in the routes/api/api-routes.js
-const fetch = require('node-fetch');
 
 // used to render all static files
 app.use(express.static("public"));

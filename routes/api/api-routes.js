@@ -2,8 +2,6 @@
 
 //this requires the dotenv node module so that I am able to have access to my API key without displaying it or pushing it to github.
 require('dotenv').config();
-//The express variable is requiring express which is the type of server I am using to run this app.
-const express = require('express')
 //The fetch variable is requiring the node-fetch module that allows me to make API calls.
 const fetch = require('node-fetch');
 //The key variable is my hidden API Key. The process allows me to access the dotenv file that contains my API Key as the variable ACCESS_KEY
@@ -48,18 +46,19 @@ module.exports = (app) => {
 
             //variable containing the spoonacular API endpoint I am using for my API call.
 
-            const url = 'https://api.spoonacular.com/recipes/search?';
+            const url = 'https://api.spoonacular.com/recipes/complexSearch?';
 
             //object created to contain the parameters that I want to pass through my API call. This is where the values of the form will be placed via their variables.
 
             let parameters = {
                 query: userInput,
                 number: 6,
-                apiKey: keys,
-                diet: dietSelection   
+                diet: dietSelection,
+                addRecipeInformation: true,
+                apiKey: keys  
             };
 
-            //The queryString variable takes the parameters object and it's key values and maps over them. As it passes between a key and it's value it adds an = between them and then it joins each key and it's value to the previous key and value with an &. This creates the proper queryString we need to add onto the Spoonacular API url to properly call everything we would like to display. 
+            //The queryString variable takes the parameters object and it's key/value pairs and maps over them. As it passes between each key and it's value it adds an '=' between them and then it joins each of the key/value pairs together with an '&'. This creates a properly formatted queryString we need to add onto the Spoonacular API url to properly call everything we would like to display. 
 
             const queryString = Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
              console.log(queryString)
@@ -76,9 +75,8 @@ module.exports = (app) => {
                 .then(response => response.json())
                 .then(response => {
                     res.json(response)
-                    // console.log('response: ' + response)
-                    // .then(function (req, res){
-                    //     // res.send(response)
+                    console.log(response)
+                   
 // if there is an error in my buildUrl or in the response returned from the Spoonacular API this will prevent the code from executing any further and will route the user to an error page.
                 }).catch(err => {
                     res.redirect('/error')
