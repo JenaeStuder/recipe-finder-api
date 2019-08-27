@@ -1,3 +1,5 @@
+//This route is for the html routing.
+
 const path = require('path');
 
 module.exports = function(app){

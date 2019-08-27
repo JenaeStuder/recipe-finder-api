@@ -26,18 +26,28 @@
 </head>
 
 <body>
+
+  <!-- container for my form on the html  -->
+
     <div class='flex-container' id='inputContainer'>
       <div class="row">
+        <!-- This takes the entire form and when the user hits submit it will post it to my server files using the /api/api-routes route -->
         <form method='POST' action='/api/api-routes' id='form'>
           <div class="col 5s">
             <div class="row">
               <div class="input-field input ">
                 <label for="textarea1">Search</label>
+
+                <!-- input field where the user types in the type of food they would like to search. I am able to distinguish where to put this once it's posted by the name attribute I have assigned to the input. -->
+
                 <input id="icon_prefix" class="materialize-textarea" type='text' name='userInput' id='searchBar'>
               </div>
             </div>
           </div>
           <div class="col 5s">
+
+            <!-- The select feature is the dropdown that is next to the search bar. This allows the user to pick a diet type for the ingredients they have searched. It identifies which item has been selected and then passes the value through the name attribute once a user hits submit. All values match the diet options on the Spoonacular API -->
+
             <div class="input-field" id='select'>
               <select id='selectField' name='dietSelection'>
                 <option value="" disabled selected>Diet Options</option>
@@ -53,41 +63,28 @@
           </div>
         </form>
         <div class="col 2s">
+      <!-- My submit button. Once this is clicked it activates the submit function on my requecipe.js file and the form is submitted to my server so the API can take the submitted values and return the results. -->
           <button type='submit' form='form' value='submit'>Submit</button>
         </div>
       </div>
     </div>
-  <div class='flex-container container' id='cardContainer'>
 
-    <!-- <div class="card small">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="./assets/images/631045-312x231.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title</span>
-          <p><a href="#">This is a link</a></p>
-          <p>second thing on the screen</p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div> -->
+    <!-- This is the area of my html where the cards that  are created on requecipe.js will be rendered it will display the users search results from the Spoonacular API. Each card will be appended to the parent div by using it's id. -->
 
-  </div>
+  <div class='flex-container container' id='cardContainer'></div>
  
- 
-
-  
- 
+ <!-- I have a jQuery document.ready function which contains a function that allows the select to work properly. This jQuery function is required to make the components taken from the MaterializeCSS library render and work correctly. It has no effect on the code written and is purely used for the Materialize components that I am using. -->
 
   <script>
     $(document).ready(function () {
       $('select').material_select();
     });
   </script>
+
 <!-- Custom JS File -->
+
 <script src="./requecipe.js"></script>
+
 </body>
 
 </html>
