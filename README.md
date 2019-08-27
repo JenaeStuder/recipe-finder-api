@@ -18,8 +18,8 @@
 ### Head over to https://spoonacular.com/ and sign up to get your very own API Key!
 ### At the root of your project directory create a .env file. Within your .env file add the following: ACCESS_KEY=Paste-Your-Api-Key-Here 
 ### Be sure to copy and paste your personal API Key after the = sign where it says "Paste-Your-Api-Key-Here" and be careful that you don't include any spaces or punctuation before or after.
-### In the terminal at the root of your project run 'npm i' to install all the dependencies and to get your package.json and package-lock.json files. Once this is complete you should have everything you need to get started searching for recipes.
- ### Don't forget to head over to your .gitignore file and add the .env file to it so your personal API won't be committed to Github.
+### In the terminal, at the root of your project, run 'npm i' to install all the dependencies and to get your package.json and package-lock.json files. Once this is complete you should have everything you need to get started searching for recipes.
+ ### Don't forget to head over to your .gitignore file and add the .env file to it so your personal API Key won't be committed to Github.
 
  ## Instructions for use:
  ### Use the app as it's already built by typing in ingredients in the search bar and picking a diet from the select.
