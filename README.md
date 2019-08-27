@@ -24,6 +24,7 @@
  ### Don't forget to head over to your .gitignore file and add the .env file to it so your personal API Key won't be committed to Github.
 
  ## Instructions for use:
+ ### In the terminal, at the root of your project, run 'npm start' to start your server. Be sure to check the console for the port your app is running on. You can find this by typing "localhost:" + port number in your browser. If your server is running you should see the app running here.
  ### Use the app as it's already built by typing in ingredients in the search bar and picking a diet from the select.
  ### If you would like to change the API endpoints, keys being passed through or the amount of items that the API calls at a time head into the routes/api/api-routes.js file. This is where you will find the Spoonacular url and endpoint, the fetch function that calls the API, along with the parameters object that will allow you to add or change any of the key values to match your desired search criteria.
 
