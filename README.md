@@ -5,16 +5,19 @@
 ## This was created using the following:
 ### Vanilla Javascript
 ### The Fetch API method
-### Expressjs Server
+### ExpressJS Server
 ### Nodejs
-### Materialize CSS Library
+### The Materialize CSS Library
 ### The Spoonacular API
+### HTML5
+### CSS
+### jQuery (for the Materialize components to work properly)
 
 ## Systems needed to run this app:
 ### Nodejs
 
 ## Instructions for install: 
-### If you have cloned this repository you will need to do the following before you can get started. 
+### If you cloned this repository you will need to do the following before you can get started searching for recipes. 
 ### Head over to https://spoonacular.com/ and sign up to get your very own API Key!
 ### At the root of your project directory create a .env file. Within your .env file add the following: ACCESS_KEY=Paste-Your-Api-Key-Here 
 ### Be sure to copy and paste your personal API Key after the = sign where it says "Paste-Your-Api-Key-Here" and be careful that you don't include any spaces or punctuation before or after.
