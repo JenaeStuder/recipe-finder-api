@@ -10,7 +10,7 @@ const path = require('path');
 const fs = require('fs');
 //The app variable will be used from now on to call all the express instances we need.
 const app = express ();
-//The PORT variable is created from the server searching for the 3000 port, if this is unavailable it'll choose another open port instead of sending an error.
+//The PORT variable is created so the server can host the project locally, it's been assigned the 3000 port, if this is unavailable it'll choose another open port instead of sending an error.
 let PORT = process.env.PORT || 3000
 //The fetch variable requires the node-fetch module that is needed to create API calls in the routes/api/api-routes.js
 const fetch = require('node-fetch');
@@ -33,7 +33,7 @@ app.get('/', async function(req, res){
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-//This is where the local machine picks a port and serves up the content within the app.
+//This is where the server tells the local host which port it will be on and tells the user which port to find their app on.
 
 app.listen(PORT, function(){
     console.log('App listening on PORT: ' + PORT);
