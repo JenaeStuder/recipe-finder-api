@@ -27,7 +27,7 @@ module.exports = (app) => {
     let userInput;
     let dietSelection;
 
-    //this post route takes the information that is posted from the html form and takes the values of the name attributes and assigns them to the appropriate variables. It them redirects the server to the '/' route.
+    //this post route takes the information that is posted from the html form and takes the values of the name attributes and assigns them to the appropriate variables. It then redirects the server to the '/' route.
 
     app.post('/api/api-routes', function (req, res) {
 

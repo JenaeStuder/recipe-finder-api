@@ -115,7 +115,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         })
     }
-    submit()
-    apiCall()
-
+    function loadMore(){
+        document.getElementById('loadMore')
+        .addEventListener("submit", function(){
+            apiCall()
+        })
+    }
+    submit();
+    apiCall();
+    loadMore();
 })

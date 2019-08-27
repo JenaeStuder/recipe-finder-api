@@ -3,20 +3,33 @@ font-family: 'BenchNine', sans-serif;
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Questrial', sans-serif; */
 
-/* *{
+*{
     box-sizing: border-box;
-} */
+}
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Dosis', sans-serif;
-    line-height: 1.6;
+    /* line-height: 1.6; */
     color: #666;
     background: #F6F6F6;
   }
+ .row .col{
+   padding: 0 10em 0 0;
+   /* margin: 1em; */
+ }
+  /* #formRow{
+    background-color: purple;
+  }
+  #btnRow{
+    background-color: teal;
+  }
+  #columns{
+    background-color: greenyellow; */
+  /* } */
   .input-field, .input{
     width: 100% !important;
-   margin: 3em !important;
+   margin: 3em 3em 1em 3em !important;
    font-size: 20px !important;
   }
 input:focus{
@@ -30,12 +43,21 @@ input:focus{
     display: flex;
     flex-wrap: wrap;
 }
+
 .cardContainer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
+}
+#inputContainer{
+  /* background-color: pink; */
+  flex-direction: column;
+}
+.btn{
+  margin: 0 2rem;
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
 }
 .card{
     margin: 1rem;

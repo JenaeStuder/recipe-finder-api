@@ -22,7 +22,7 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Requecipe</title>
 </head>
 
 <body>
@@ -30,11 +30,11 @@
   <!-- container for my form on the html  -->
 
     <div class='flex-container' id='inputContainer'>
-      <div class="row">
+      <div class="row" id='formRow'>
         <!-- This takes the entire form and when the user hits submit it will post it to my server files using the /api/api-routes route -->
         <form method='POST' action='/api/api-routes' id='form'>
-          <div class="col 5s">
-            <div class="row">
+          <div class="col 5s" id='columns'>
+            <!-- <div class="row"> -->
               <div class="input-field input ">
                 <label for="textarea1">Search</label>
 
@@ -42,9 +42,9 @@
 
                 <input id="icon_prefix" class="materialize-textarea" type='text' name='userInput' id='searchBar'>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
-          <div class="col 5s">
+          <div class="col 5s" id = 'columns'>
 
             <!-- The select feature is the dropdown that is next to the search bar. This allows the user to pick a diet type for the ingredients they have searched. It identifies which item has been selected and then passes the value through the name attribute once a user hits submit. All values match the diet options on the Spoonacular API -->
 
@@ -62,10 +62,17 @@
             </div>
           </div>
         </form>
-        <div class="col 2s">
+      </div>
+      <div class='row' id='btnRow'>
+        <!-- <div class="col"> -->
       <!-- My submit button. Once this is clicked it activates the submit function on my requecipe.js file and the form is submitted to my server so the API can take the submitted values and return the results. -->
-          <button type='submit' form='form' value='submit'>Submit</button>
-        </div>
+          <button class="btn waves-effect waves-light" type='submit' form='form' value='submit'>Submit</button>
+<!-- 
+          The Load More button creates another API call as more options are being rendered to the screen -->
+       
+  <button class="btn waves-effect waves-light" type="submit" form='form' name="action" id='loadMore'>Load More
+  </button>
+         <!-- </div> -->
       </div>
     </div>
 
