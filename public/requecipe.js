@@ -13,7 +13,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     //takes the results from the spoonacular API and puts them into the recipeResults variable for ease of coding
 
                     let recipeResults = response.results
+                    let totalResults = response.totalResults
                     let results = [];
+
+                   
+                        if(!totalResults){
+                           let noResultsDiv = document.createElement('div')
+                            noResultsDiv.setAttribute('class', 'noResults')
+                            let noResultsMessage = "<div><h3>We're sorry, but it seems that your search did not match any of our amazing recipes, please try again!</h3></div>"
+                            noResultsDiv.innerHTML = noResultsMessage;
+                            document.getElementById('cardContainer').append(noResultsDiv);
+                        }
 
                     //loop that takes the results and loops over them individually so that all the results are gathered and not just the first one
 

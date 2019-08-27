@@ -17,7 +17,7 @@
 ### Nodejs
 
 ## Instructions for install:  
-### Head over to https://spoonacular.com/ and sign up to get your very own API Key!
+### Head over to https://spoonacular.com/food-api and sign up to get your very own API Key!
 ### At the root of your project directory create a .env file. Within your .env file add the following: ACCESS_KEY=Paste-Your-Api-Key-Here 
 ### Be sure to copy and paste your personal API Key after the = sign where it says "Paste-Your-Api-Key-Here" and be careful that you don't include any spaces or punctuation before or after.
 ### In the terminal, at the root of your project, run 'npm i' to install all the dependencies and to get your package.json and package-lock.json files. Once this is complete you should have everything you need to get started searching for recipes.
