@@ -28,7 +28,7 @@
 <body>
     <div class='flex-container' id='inputContainer'>
       <div class="row">
-        <form method='GET' action='/api/api-routes' id='form'>
+        <form method='POST' action='/api/api-routes' id='form'>
           <div class="col 5s">
             <div class="row">
               <div class="input-field input ">
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-  <div class='flex-container' id='cardContainer'>
+  <div class='flex-container container' id='cardContainer'>
 
     <!-- <div class="card small">
         <div class="card-image waves-effect waves-block waves-light">
@@ -78,14 +78,16 @@
  
  
 
-  <!-- Custom JS File -->
-  <script src="./requecipe.js"></script>
+  
+ 
 
   <script>
     $(document).ready(function () {
       $('select').material_select();
     });
   </script>
+<!-- Custom JS File -->
+<script src="./requecipe.js"></script>
 </body>
 
 </html>

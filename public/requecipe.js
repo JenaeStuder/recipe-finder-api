@@ -1,10 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (event) {
+    event.preventDefault()
             
             function submit() {
-                document.getElementById('form').addEventListener("submit", function (event) {
-                    event.preventDefault()
-
-                     apiCall()
+                document.getElementById('form').addEventListener("submit", function () {
+                   
                 })
             }
                 submit()
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                async function apiCall() {
                    await fetch('/api/api-routes')
                         .then( async res => res.json())
-                        .then(await function (response) {
+                        .then( await function (response) {
 
                             let recipeResults = response.results
                             let results = [];
@@ -112,9 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 }
                             }
                         })
-                        // .catch(function (err) {
-                        //     console.log('Fetch Error' + err);
-                        // })
+                        .catch(function (err) {
+                            console.log('Fetch Error' + err);
+                        })
                 }
+                apiCall()
                
              })
