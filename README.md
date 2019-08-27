@@ -1,6 +1,6 @@
 # recipe-finder-api
 
-# A recipe finding app using the Spoonacular API! You can search any ingredients and diet and it will pull up recipes that match your search!
+# A recipe finding app using the Spoonacular API! You can search any ingredient and popular diets and it will pull up recipes that match your search!
 
 ## This was created using the following:
 ### Vanilla Javascript
