@@ -1,4 +1,4 @@
-//This is where I build my express server. I also am requiring many of the node modules that I will be needing in my app here.
+//This is where I built my express server. I also am requiring many of the node modules that I will be needing in my app here.
 
 //The express variable requires the node package for Express so that I can create an Express server.
 const express = require('express');
