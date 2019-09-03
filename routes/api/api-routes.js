@@ -24,6 +24,7 @@ module.exports = (app) => {
 
     let userInput;
     let dietSelection;
+    let offSet = 0;
 
     //this post route takes the information that is posted from the html form and takes the values of the name attributes and assigns them to the appropriate variables. It then redirects the server to the '/' route.
 
@@ -52,9 +53,10 @@ module.exports = (app) => {
 
             let parameters = {
                 query: userInput,
-                number: 6,
+                number: 12,
                 diet: dietSelection,
                 addRecipeInformation: true,
+                offset: offSet,
                 apiKey: keys  
             };
 

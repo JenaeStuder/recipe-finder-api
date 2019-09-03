@@ -136,3 +136,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     apiCall();
     loadMore();
 })
+
+// figure out how to use "const newOffsetValue = Object.values(results).reduce((offset, number) => offset + number);" to add the keys of the results.offset and results.number in the results object together and push the new value into the offset key in the parameters object. 
+
+//figure out how to do the routes so the error message on the initial posts redirects somewhere else, but the contentgoes to the html
+
+//do a loader while waiting for results to post
+
+//localStorage on html cashing them into the html so when you do a search add a timestamp that will cause it to refresh with new results
+
+// results.length +1 for the offset and manage the state
