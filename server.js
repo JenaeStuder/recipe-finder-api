@@ -6,10 +6,12 @@ const express = require('express');
 require('dotenv').config();
 //The path variable requires and contains the Path node module which allows you to access all the executables available to npm scripts, without booting up all of the npm(1)
 const path = require('path');
-//The fs variable requires and contains the File System module. This allows you to work with the file system on your computer.
-// const fs = require('fs');
+
 //The app variable will be used from now on to call all the express instances we need.
 const app = express ();
+
+
+
 //The PORT variable is created so the server can host the project locally, it's been assigned the 3000 port, if this is unavailable it'll choose another open port instead of sending an error.
 let PORT = process.env.PORT || 3000
 
@@ -30,6 +32,7 @@ require('./routes')(app)
 app.get('/', async function(req, res){
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
 
 //This is where the server tells the local host which port it will be on and tells the user which port to find their app on.
 

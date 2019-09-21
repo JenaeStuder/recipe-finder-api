@@ -1,5 +1,3 @@
-// This file is where the routing from the html post request is gathered, that information is converted into variables which are then called using the node-fetch module creating an API call to the Spoonacular API. The response from that call is then sent via the get route to the fetch call on the public/requicipe.js file on the front end. 
-
 //this requires the dotenv node module so that I am able to have access to my API key without displaying it or pushing it to github.
 require('dotenv').config();
 //The fetch variable is requiring the node-fetch module that allows me to make API calls.
@@ -47,31 +45,30 @@ module.exports = (app) => {
 
         let userInput;
         let dietSelection;
-        // let offSet = 0;
+        let newOffset;
 
         //this post route takes the information that is posted from the html form and takes the values of the name attributes and assigns them to the appropriate variables. It then redirects the server to the '/' route.
 
-        app.post('/api/api-routes', cache(2), function (req, res) {
+        app.get('/api/api-routes', function(req, res){
+            userInput;
+            dietSelection;
+        })
 
-            userInput = req.body.userInput;
-            dietSelection = req.body.dietSelection;
-           
+        app.post('/api/results', cache(2), function (req, res) {
+           newOffset= req.body.newOffset
+           userInput;
+           dietSelection;
 
             console.log('submit results: ' + dietSelection)
             console.log('user input: ' + userInput)
+            console.log('new offset: ' +  newOffset)
             res.redirect('/')
-
-        })
-        
-        app.put('/api/results', function(req, res){
-           userInput;
-           dietSelection;
 
         })
 
         //The GET route takes the variables created above and applies them to create the API call.
 
-        app.get('/api/api-routes', function (req, res) {
+        app.get('/api/results', function (req, res) {
             //   newOffset= req.query.newOffset;
 
                 function recipes() {
@@ -85,10 +82,10 @@ module.exports = (app) => {
 
                     let parameters = {
                         query: userInput,
-                        number: 12,
+                        number: 2,
                         diet: dietSelection,
                         addRecipeInformation: true,
-                        // offset: newOffSet,
+                        offset: newOffSet,
                         apiKey: keys
                     };
 

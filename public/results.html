@@ -51,7 +51,7 @@
 
           <div class="input-field" id='select'>
             <select id='selectField' name='dietSelection'>
-              <option value="null" disabled selected>Diet Options</option>
+              <option value="" disabled selected>Diet Options</option>
               <option value= 'null'>No Diet</option>
               <option value='Gluten Free'>Gluten Free</option>
               <option value='Ketogenic'>Ketogenic</option>
@@ -72,14 +72,14 @@
       <!-- 
           The Load More button creates another API call as more options are being rendered to the screen -->
 
-      <button method='POST' action='api/results' class="btn waves-effect waves-light" type="submit" form='form' name="newOffset" id='loadMore'>Load More
+      <button class="btn waves-effect waves-light" type="submit" form='form' name="action" id='loadMore'>Load More
       </button>
     </div>
   </div>
 
   <!-- This is the area of my html where the cards that  are created on requecipe.js will be rendered it will display the users search results from the Spoonacular API. Each card will be appended to the parent div by using it's id. -->
 
-  <div class='flex-container container' id='cardContainer'>
+  <!-- <div class='flex-container container' id='cardContainer'> -->
     
     <!-- <div class="preloader-wrapper big active">
       <div class="spinner-layer spinner-blue">
@@ -133,8 +133,8 @@
   </script>
 
   <!-- Custom JS File -->
-  <!-- <script src='./constructor.js'></script> -->
-  <script src="./requecipe.js"></script>
+
+  <!-- <script src="./requecipe.js"></script> -->
   <script src='./favorites.js'></script>
 </body>
 

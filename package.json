@@ -24,6 +24,7 @@
     "fetch": "^1.1.0",
     "fs": "0.0.1-security",
     "materialize-css": "^1.0.0",
+    "memory-cache": "^0.2.0",
     "node": "^12.8.1",
     "node-fetch": "^2.6.0",
     "path": "^0.12.7",

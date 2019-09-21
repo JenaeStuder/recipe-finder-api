@@ -12,8 +12,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     //takes the results from the spoonacular API and puts them into the recipeResults variable for ease of coding
 
-                    let recipeResults = response.results
-                    let totalResults = response.totalResults
+                    let recipeResults = response.results;
+                    let totalResults = response.totalResults;
+                    let offset= response.offset;
+                    let number= response.number;
                     let results = [];
 
                    
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         let servings = recipeResults[i].servings;
                         let readyIn = recipeResults[i].readyInMinutes
                         let source = recipeResults[i].sourceUrl;
+                        
                         //servingTime is variable that contains a function to convert the total minutes into hours and minutes so we can display our data in an hour and minute format.
 
                         let servingTime = function (totalMinutes, hours, minutes, newtime) {
@@ -54,13 +57,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
                             return newtime
                         }()
+                       
+                        const newOffsetValue = Object.values(response, offset, number).reduce((offset, number) => offset + number++);
 
+                        // newOffsetValue.push(loadMore(newOffsetValue));
+                    
                         //console logging the results to make sure that everything we receive from the api is being displayed onto the html correctly.
 
                         console.log("Title: " + title);
                         console.log("Ready In: " + servingTime);
                         console.log("Picture: " + image);
                         console.log("Servings: " + servings);
+                        // console.log("Offset:"+ offset);
+                        // console.log('Number:'+ number);
 
                         //takes the results array that contains each result and pushes them to the createCard function.
                         results.push(createCard(recipeResults[i]));
@@ -110,31 +119,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             return;
                         }
+                        
                     }
                 })
+               
                 
             //If there are any errors in the function this code catches them and prevents the function from completing and will display an error message in the console.
 
-            .catch(function (err) {
-                console.log('Fetch Error' + err);
-            })
+            // .catch(function (err) {
+            //     console.log('Fetch Error' + err);
+            // })
     }
     //This function controls my submit button on my html page. It takes the content that is part of the id form and when the user hits submit, sends the information to the routes/api/api-routes.js file so the results of the form can be put into the api call.
 
     function submit() {
-        document.getElementById('form').addEventListener("submit", function () {
-
+        document.getElementById('form').addEventListener("submit", function () {     
         })
-    }
-    function loadMore(){
+    } 
+
+    function loadMore(newOffsetValue){
         document.getElementById('loadMore')
         .addEventListener("submit", function(){
-            apiCall()
+            newOffsetValue;
+            apiCall()  
         })
-    }
+    
+}
+// function newOffset(value){
+//     use_newOffsetValue(value)
+//     
+// }
     submit();
     apiCall();
     loadMore();
+//    newOffset()
 })
 
 // figure out how to use "const newOffsetValue = Object.values(results).reduce((offset, number) => offset + number);" to add the keys of the results.offset and results.number in the results object together and push the new value into the offset key in the parameters object. 
